@@ -1,0 +1,27 @@
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+d3_renderer
+*.o
+*.out
+
+# Files and folders containing "copy" in their name
+*copy*
+*Copy*
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS / editor backups
+*~
