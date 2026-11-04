@@ -5,7 +5,6 @@
 #include <math.h>
 
 #include "scene_design.h"
-#define START_SCENE_INDEX 0
 
 struct World {
     

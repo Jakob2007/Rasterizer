@@ -1,0 +1,6 @@
+// #define DRAW_BARYCENTRIC_COORDS
+// #define DRAW_BOUNDING_BOX
+#define DRAW_NORMAL_COLOR
+// #define DISABLE_BACKFACE_CULLING
+// #define DRAW_BVH
+// #define DRAW_SKYBOX_GRID

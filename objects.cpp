@@ -5,6 +5,8 @@
 
 #include "objects.h"
 
+#define ASSETS_PATH "./assets"
+
 #define STB_IMAGE_IMPLEMENTATION // must be included in at least one .cpp to compile correctly
 #include "stb_image.h"
 
@@ -109,7 +111,7 @@ void d3Object::refresh() {
 }
 
 void d3Object::load(const std::string& filename) {
-	std::ifstream file(filename);
+	std::ifstream file(std::string(ASSETS_PATH) + "/" + filename);
 	if (!file.is_open()) {
 		std::cerr << "Failed to open OBJ file: " << filename << std::endl;
 	}

@@ -1,6 +1,10 @@
 
-#include "scene.h"
+#include <iostream>
 #include <GLFW/glfw3.h>
+
+#include "scene.h"
+
+#define START_SCENE_INDEX 1
 
 class MainScene : public Scene {
 private:
@@ -29,12 +33,17 @@ private:
     float scale = .1;
     int half_size = 50;
     float time = 0;
+    Vec2 initial_mouse_pos;
 
 public:
     void setup() override {
         // is_static = true;
         set_mouse_visability(false);
+        initial_mouse_pos = get_mouse_position();
+
         camera.skybox_from_png("/Users/jakobsauer/Downloads/free-skybox-basic-sky/textures/sky_water_landscape.jpg");
+        camera.position = {0, 50, 200};
+        // camera.rotate_degrees_y(180);
         add_light({degrees2radians(45.0), degrees2radians(45.0), 0}, 255);
         load_object("./data_monkey.obj")->set_reflective_index(2)->transform_scale(30)->transform_position({0,50,-10});
 
@@ -111,8 +120,8 @@ public:
 
         const float mouse_sensitivity = 0.005;
         Vec2 mouse_pos = get_mouse_position();
-        camera.rotation.y = -mouse_pos.x * mouse_sensitivity - M_PI;
-        camera.rotation.x = -mouse_pos.y * mouse_sensitivity + M_PI;
+        camera.rotation.y = -(mouse_pos.x - initial_mouse_pos.x) * mouse_sensitivity;
+        camera.rotation.x = -(mouse_pos.y - initial_mouse_pos.y) * mouse_sensitivity;
         camera.rotation.x = std::max(camera.rotation.x, (float)-M_PI/2.0f);
         camera.rotation.x = std::min(camera.rotation.x, (float)M_PI/2.0f);
         if (is_key_pressed(GLFW_KEY_G)) camera.rotate_degrees_z(move_speed*delta_time);

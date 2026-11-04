@@ -4,14 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 
-#define GL_SILENCE_DEPRECATION
+#include "config.h"
 
-#define DRAW_BARYCENTRIC_COORDS
-// #define DRAW_BOUNDING_BOX
-// #define DRAW_NORMAL_COLOR
-// #define DISABLE_BACKFACE_CULLING
-// #define DRAW_BVH
-// #define DRAW_SKYBOX_GRID
+#define GL_SILENCE_DEPRECATION
 
 #define ZERO_PLUS_FLOAT_TOLERANCE 1e-6
 #define PixelArr unsigned char*

@@ -1,6 +1,4 @@
 
-#include <iostream>
-
 #include "world.h"
 
 /* --- compile command ---
@@ -19,6 +17,8 @@ clang++ main.cpp objects.cpp scene.cpp BVH.cpp world.cpp -O3 \
 
 /*
 TODO:
+
+* Seperate scenes from engine
 
 real depth map
 fix BVH rendering (likely deeper issue)
